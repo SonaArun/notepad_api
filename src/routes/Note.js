@@ -1,5 +1,5 @@
 const express = require('express');
-var route = express.Router;
+var route = express.Router();
 const Note = require('../models/Note');
 route.get('/list/:userid',async function(req, res){
     var notes = await Note.find({userid: req.params.userid});
@@ -32,4 +32,4 @@ route.delete('/delete', async function(req, res) {
     res.json(response);
     
 })
-module.exports(route);
+module.exports=route;
